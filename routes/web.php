@@ -30,3 +30,15 @@ Route::get('ets',"ViewController@showEts");
 
 Route::get('isianfaktorial',"ViewController@showForm");
 Route::post('hasilfaktorial',"ViewController@resultFactorial");
+
+//route CRUD
+//menampilkan data dari database
+Route::get('/pegawai','PegawaiController@index');
+//input data ke database
+Route::get('/pegawai/tambah','PegawaiController@tambah');
+Route::post('/pegawai/store','PegawaiController@store');
+//update data di database
+Route::get('/pegawai/edit/{id}','PegawaiController@edit');
+Route::post('/pegawai/update','PegawaiController@update');
+//hapus data di database
+Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
