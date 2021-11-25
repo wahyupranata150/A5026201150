@@ -12,6 +12,9 @@
 */
 
 //halaman utama
+
+//use Illuminate\Routing\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -31,7 +34,7 @@ Route::get('ets',"ViewController@showEts");
 Route::get('isianfaktorial',"ViewController@showForm");
 Route::post('hasilfaktorial',"ViewController@resultFactorial");
 
-//route CRUD
+//route CRUD pegawai
 //menampilkan data dari database
 Route::get('/pegawai','PegawaiController@index');
 //input data ke database
@@ -42,3 +45,15 @@ Route::get('/pegawai/edit/{id}','PegawaiController@edit');
 Route::post('/pegawai/update','PegawaiController@update');
 //hapus data di database
 Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
+
+//route CRUD tugas
+//menampilkan data dari database
+Route::get('/tugas','TugasController@index');
+//input data ke database
+Route::get('/tugas/tambah','TugasController@tambah');
+Route::post('/tugas/store','TugasController@store');
+//update data di database
+Route::get('/tugas/edit/{id}','TugasController@edit');
+Route::post('/tugas/update','TugasController@update');
+//hapus data di database
+Route::get('/tugas/hapus/{id}','TugasController@hapus');
