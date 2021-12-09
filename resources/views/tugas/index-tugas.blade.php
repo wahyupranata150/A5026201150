@@ -1,11 +1,18 @@
-<!DOCTYPE html>
+{{--<!DOCTYPE html>
 <html>
 <head>
 	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
 </head>
-<body>
+<body>--}}
 
-	<h2>www.malasngoding.com</h2>
+    @extends('layout.bahagia')
+
+    @section('title', 'Mengedit Data Absensi')
+    @section('judulhalaman', 'Edit Absensi Pegawai')
+
+    @section('konten')
+
+	{{--<h2>www.malasngoding.com</h2>--}}
 	<h3>Data Tugas</h3>
 
 	<a href="/tugas/tambah"> + Tambah Tugas Baru</a>
