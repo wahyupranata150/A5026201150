@@ -11,7 +11,12 @@ class TugasController extends Controller
     public function index()
     {
         //mengambil data dari tabel tugas
-        $tugas = DB::table('tugas')->get();
+        //$tugas = DB::table('tugas')->get();
+
+        $tugas = DB::table('tugas')
+        ->join('pegawai', 'tugas.tugas_idPegawai', '=', 'pegawai.pegawai_id')
+        ->select('tugas.*', 'pegawai.pegawai_nama')
+        ->paginate() ;
 
         //mengirim data tugas ke view index
         return view('tugas.index-tugas', ['tugas' => $tugas]);
@@ -69,5 +74,29 @@ class TugasController extends Controller
 
         // alihkan halaman ke halaman tugas
         return redirect('/tugas');
+    }
+
+    //method untuk melakukan search
+    public function cari(Request $request)
+    {
+        // menangkap data pencarian
+        $cari = $request->cari;
+
+        // mengambil data dari tabel tugas sesuai pencarian data
+        $tugas = DB::table('tugas')
+            ->where('tugas.tugas_namaTugas', 'like', "%" . $cari . "%")
+            ->paginate(5);
+
+        // mengirim data tugas ke view index
+        return view('tugas.index-tugas', ['tugas' => $tugas]);
+    }
+
+    //method untuk melihat detail tugas
+    public function detail($id)
+    {
+        // ambil data tugas berdasarkan id
+        $tugas = DB::table('tugas')->where('tugas_id', $id)->get();
+        //mengirim data tugas view detail
+        return view('tugas.detail-tugas', ['tugas' => $tugas]);
     }
 }

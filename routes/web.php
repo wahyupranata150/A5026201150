@@ -34,6 +34,7 @@ Route::get('ets',"ViewController@showEts");
 Route::get('isianfaktorial',"ViewController@showForm");
 Route::post('hasilfaktorial',"ViewController@resultFactorial");
 
+
 //route CRUD pegawai
 //menampilkan data dari database
 Route::get('/pegawai','PegawaiController@index');
@@ -45,6 +46,9 @@ Route::get('/pegawai/edit/{id}','PegawaiController@edit');
 Route::post('/pegawai/update','PegawaiController@update');
 //hapus data di database
 Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
+Route::get('/pegawai/cari','PegawaiController@cari');
+Route::get('/pegawai/view/{id}','PegawaiController@detail');
+
 
 //route CRUD tugas
 //menampilkan data dari database
@@ -57,6 +61,9 @@ Route::get('/tugas/edit/{id}','TugasController@edit');
 Route::post('/tugas/update','TugasController@update');
 //hapus data di database
 Route::get('/tugas/hapus/{id}','TugasController@hapus');
+Route::get('/tugas/cari','TugasController@cari');
+Route::get('/tugas/view/{id}','TugasController@detail');
+
 
 //route CRUD absen
 Route::get('/absen','AbsenController@indexabsen');
@@ -65,3 +72,16 @@ Route::post('/absen/store','AbsenController@store');
 Route::get('/absen/edit/{id}','AbsenController@edit');
 Route::post('/absen/update','AbsenController@update');
 Route::get('/absen/hapus/{id}','AbsenController@hapus');
+Route::get('/absen/cari','AbsenController@cari');
+Route::get('/absen/view/{id}','AbsenController@detail');
+
+
+//route CRUD tas
+Route::get('/tas', 'TasController@index');
+Route::get('/tas/tambah', 'TasController@tambah');
+Route::post('/tas/store','TasController@store');
+Route::get('/tas/edit/{id}','TasController@edit');
+Route::post('/tas/update','TasController@update');
+Route::get('/tas/hapus/{id}','TasController@hapus');
+Route::get('/tas/cari','TasController@cari');
+Route::get('/tas/view/{id}','TasController@detail');

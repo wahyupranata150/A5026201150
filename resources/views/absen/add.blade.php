@@ -1,10 +1,16 @@
 
-   @extends('layout.bahagia')
+    @extends('layout.bahagia')
 
-   @section('title', 'Menambah Absen')
-   @section('judulhalaman', 'Menambah Data Absen')
+    @section('title', 'Data Absensi Pegawai')
+    @section('judulhalaman', 'Tambah Absensi Pegawai')
 
-   @section('konten')
+    @section('konten')
+
+    <a href="/absen" class="btn btn-info float-left"> Kembali</a>
+
+    <br />
+    <br />
+
     <form action="/absen/store" method="post">
         {{ csrf_field() }}
 
@@ -34,15 +40,20 @@
             });
         </script>
 
-        Status <br />
-        <input type="radio" id="html" name="status" value="I">
-        <label for="html">Izin</label><br>
-        <input type="radio" id="css" name="status" value="S" checked="checked">
-        <label for="css">Sakit</label><br>
-        <input type="radio" id="javascript" name="status" value="A">
-        <label for="javascript">Alpha</label>
+<label class="col-sm-3 text-right" for="status">Status :</label>
+<div class="col-sm-7 text-left">
+    <input type="radio" id="hadir" name="status" value="H" checked>
+    <label for="hadir">Hadir</label><br>
+    <input type="radio" id="izin" name="status" value="I">
+    <label for="izin">Izin</label><br>
+    <input type="radio" id="sakit" name="status" value="S">
+    <label for="sakit">Sakit</label><br>
+    <input type="radio" id="alpha" name="status" value="A">
+    <label for="alpha">Alpha</label><br>
+</div>
+</div>
 
-        <p><input type="submit" value="Simpan Data"></p>
+<input type="submit" class="btn btn-info" value="Simpan Data">
     </form>
-    <p> <a href="/absen"> Kembali</a></p>
+
 @endsection
