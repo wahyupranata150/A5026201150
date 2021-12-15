@@ -77,6 +77,7 @@
             <a href="/absen">Absen</a>
             <a href="/tugas">Tugas</a>
             <a href="/tas">Praktikum 3</a>
+            <a href="/karyawan1">EAS</a>
         </div>
 
         <script>

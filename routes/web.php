@@ -85,3 +85,9 @@ Route::post('/tas/update','TasController@update');
 Route::get('/tas/hapus/{id}','TasController@hapus');
 Route::get('/tas/cari','TasController@cari');
 Route::get('/tas/view/{id}','TasController@detail');
+
+//route CRUD karyawan1 eas
+Route::get('/karyawan1', 'Karyawan1Controller@index');
+Route::get('/karyawan1/tambah', 'Karyawan1Controller@tambah');
+Route::post('/karyawan1/store','Karyawan1Controller@store');
+Route::get('/karyawan1/hapus/{id}','Karyawan1Controller@hapus');
