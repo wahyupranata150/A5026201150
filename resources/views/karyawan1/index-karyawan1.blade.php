@@ -34,8 +34,7 @@
         <td>{{ $p->NIP }}</td>
         <td>{{ $p->Nama }}</td>
         <td>{{ $p->Pangkat }}</td>
-        <td>{{ $p->Gaji }}</td>
-        {{-- <td >{{ number_format($k->Gaji, 0, ',', '.') }}</td> --}}
+        <td >{{ number_format($p->Gaji, 0, ',', '.') }}</td>
         <td>
             <a href="/karyawan1/hapus/{{ $p->NIP }}">Hapus</a>
         </td>
